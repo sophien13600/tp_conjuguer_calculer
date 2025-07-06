@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header("location: /");
         die();
     }
-} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+} elseif ($_SERVER["REQUEST_METHOD"] == "GET" and $_SERVER['HTTP_REFERER'] != "http://localhost:8888/views/dashboard.php" ) {
     session_unset();
     session_destroy();
         header("location: /");
